@@ -181,7 +181,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
-* Tue Oct 07 2014 Alice Wonder <alicewonder@shastaherps.org> - 2.0.5-3
+* Tue Oct 07 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.0.5-3
 - Build for AWEL w/ mp3 support
 
 * Mon Mar 17 2014 Darryl L. Pierce <dpierce@redhat.com> - 2.0.5-2

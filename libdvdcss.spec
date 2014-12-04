@@ -64,5 +64,5 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Thu Oct 02 2014 Alice Wonder <alicewonder@shastaherps.org> - 1.3.0-1
+* Thu Oct 02 2014 Alice Wonder <rpmbuild@domblogger.net> - 1.3.0-1
 - Initial spec file for AWEL

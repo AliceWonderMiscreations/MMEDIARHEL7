@@ -141,7 +141,7 @@ touch -r %{buildroot}%{_includedir}/x264.h %{buildroot}%{_includedir}/x264_confi
 %endif
 
 %changelog
-* Mon Sep 22 2014 Alice Wonder <alicewonder@shastaherps.org> - 0.142-6.20140921
+* Mon Sep 22 2014 Alice Wonder <rpmbuild@domblogger.net> - 0.142-6.20140921
 - Updated snapshot, define macro to build boostrap.
 - Disable gpac for now (will re-enable later)
 

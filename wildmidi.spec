@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Fri Sep 26 2014 Alice Wonder <alicewonder@shastaherps.org> - 0.2.3.4-7.0
+* Fri Sep 26 2014 Alice Wonder <rpmbuild@domblogger.net> - 0.2.3.4-7.0
 - Require timidity++ NOT timidity++-patches
 
 * Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.3.4-7

@@ -81,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog
 
 %changelog
-* Sat Sep 20 2014 Alice Wonder <alicewonder@shastaherps.org> - 2.3-3.1
+* Sat Sep 20 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.3-3.1
 - Added libgcrypt-devel to BuildRequires
 
 * Wed Jan 04 2012 Nicolas Chauvet <kwizart@gmail.com> - 2.3-3

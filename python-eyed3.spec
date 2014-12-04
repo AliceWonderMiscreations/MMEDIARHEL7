@@ -37,7 +37,7 @@ provided. The formats supported are ID3 v1.0/v1.1 and v2.3/v2.4.
 %{python2_sitelib}/eyeD3-%{version}-py%{python2_version}.egg-info/
 
 %changelog
-* Thu Oct 09 2014 Alice Wonder <alicewonder@shastaherps.org> - 0.7.5-1
+* Thu Oct 09 2014 Alice Wonder <rpmbuild@domblogger.net> - 0.7.5-1
 - Fixed missing import math in lameinfo.py
 - Update to 0.7.5
 

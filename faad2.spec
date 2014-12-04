@@ -136,7 +136,7 @@ install -dm755 %{buildroot}%{_mandir}/man1
 }
 
 %changelog
-* Fri Sep 19 2014 Alice Wonder <alicewonder@shastaherps.org> 1:2.7-2.3.0
+* Fri Sep 19 2014 Alice Wonder <rpmbuild@domblogger.net> 1:2.7-2.3.0
 - Filenane in dev doc PDF, changed white space to underscore.
 
 * Wed Jan 04 2012 Nicolas Chauvet <kwizart@gmail.com> - 1:2.7-2.3
