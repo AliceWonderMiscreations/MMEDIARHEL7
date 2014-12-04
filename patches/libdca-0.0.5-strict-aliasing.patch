@@ -1,0 +1,71 @@
+diff -up libdca-0.0.5/libao/Makefile.in.aliasing libdca-0.0.5/libao/Makefile.in
+--- libdca-0.0.5/libao/Makefile.in.aliasing	2007-11-02 21:16:15.000000000 +0100
++++ libdca-0.0.5/libao/Makefile.in	2007-11-02 21:16:46.000000000 +0100
+@@ -172,7 +172,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CFLAGS = $(OPT_CFLAGS)
++AM_CFLAGS = $(OPT_CFLAGS) -fno-strict-aliasing
+ AM_CPPFLAGS = -I$(top_srcdir)/include
+ noinst_LTLIBRARIES = libao.la
+ libao_la_SOURCES = audio_out.c audio_out_null.c audio_out_float.c \
+diff -up libdca-0.0.5/libao/Makefile.am.aliasing libdca-0.0.5/libao/Makefile.am
+--- libdca-0.0.5/libao/Makefile.am.aliasing	2007-04-08 10:23:11.000000000 +0200
++++ libdca-0.0.5/libao/Makefile.am	2007-11-02 21:16:08.000000000 +0100
+@@ -1,4 +1,4 @@
+-AM_CFLAGS = $(OPT_CFLAGS)
++AM_CFLAGS = $(OPT_CFLAGS) -fno-strict-aliasing
+ AM_CPPFLAGS = -I$(top_srcdir)/include
+ 
+ noinst_LTLIBRARIES = libao.la
+diff -up libdca-0.0.5/libdca/bitstream.h.aliasing libdca-0.0.5/libdca/bitstream.h
+--- libdca-0.0.5/libdca/bitstream.h.aliasing	2007-04-08 11:08:35.000000000 +0200
++++ libdca-0.0.5/libdca/bitstream.h	2007-11-02 21:20:07.000000000 +0100
+@@ -29,22 +29,38 @@
+ 
+ #else
+ 
+-#   define swab32(x)\
+-((((uint8_t*)&x)[0] << 24) | (((uint8_t*)&x)[1] << 16) |  \
+- (((uint8_t*)&x)[2] << 8)  | (((uint8_t*)&x)[3]))
++static inline uint32_t swab32(uint32_t x) {
++	union {
++		uint32_t x32;
++		uint8_t x8[4];
++	} u;
++	u.x32 = x;
++	return u.x8[0] << 24 | u.x8[1] << 16 | u.x8[2] << 8 | u.x8[3];
++}
+ 
+ #endif
+ 
+ #ifdef WORDS_BIGENDIAN
+ 
+-#   define swable32(x)\
+-((((uint8_t*)&x)[0] << 16) | (((uint8_t*)&x)[1] << 24) |  \
+- (((uint8_t*)&x)[2])  | (((uint8_t*)&x)[3] << 8))
++static inline uint32_t swable32(uint32_t x) {
++	union {
++		uint32_t x32;
++		uint8_t x8[4];
++	} u;
++	u.x32 = x;
++	return u.x8[0] << 16 | u.x8[1] << 24 | u.x8[2] | u.x8[3] << 8;
++}
+ 
+ #else
+ 
+-#   define swable32(x)\
+-((((uint32_t)x) >> 16) | (((uint32_t)x) << 16))
++static inline uint32_t swable32(uint32_t x) {
++	union {
++		uint32_t x32;
++		uint16_t x16[2];
++	} u;
++	u.x32 = x;
++	return u.x16[0] << 16 | u.x16[1];
++}
+ 
+ #endif
+ 

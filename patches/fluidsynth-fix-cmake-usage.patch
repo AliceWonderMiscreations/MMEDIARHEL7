@@ -1,0 +1,33 @@
+diff -rupN fluidsynth-1.1.6.old/CMakeLists.txt fluidsynth-1.1.6/CMakeLists.txt
+--- fluidsynth-1.1.6.old/CMakeLists.txt	2012-08-16 00:01:13.000000000 -0400
++++ fluidsynth-1.1.6/CMakeLists.txt	2012-08-19 18:42:16.309818347 -0400
+@@ -407,12 +407,12 @@ add_subdirectory ( doc )
+ # pkg-config support
+ set ( prefix "${CMAKE_INSTALL_PREFIX}" )
+ set ( exec_prefix "\${prefix}" )
+-set ( libdir "\${exec_prefix}/${LIB_INSTALL_DIR}${LIB_SUFFIX}" )
+-set ( includedir "\${prefix}/${INCLUDE_INSTALL_DIR}" )
++set ( libdir "${LIB_INSTALL_DIR}" )
++set ( includedir "${INCLUDE_INSTALL_DIR}" )
+ configure_file ( fluidsynth.pc.in
+ 	${CMAKE_BINARY_DIR}/fluidsynth.pc IMMEDIATE @ONLY )
+ install ( FILES ${CMAKE_BINARY_DIR}/fluidsynth.pc
+-	DESTINATION ${LIB_INSTALL_DIR}${LIB_SUFFIX}/pkgconfig )
++	DESTINATION ${LIB_INSTALL_DIR}/pkgconfig )
+ 
+ # Extra targets for Unix build environments
+ if ( UNIX )
+diff -rupN fluidsynth-1.1.6.old/src/CMakeLists.txt fluidsynth-1.1.6/src/CMakeLists.txt
+--- fluidsynth-1.1.6.old/src/CMakeLists.txt	2012-08-16 00:01:13.000000000 -0400
++++ fluidsynth-1.1.6/src/CMakeLists.txt	2012-08-19 18:42:41.949715415 -0400
+@@ -324,8 +324,8 @@ if ( MACOSX_FRAMEWORK )
+ else ( MACOSX_FRAMEWORK )
+   install ( TARGETS fluidsynth libfluidsynth
+     RUNTIME DESTINATION ${BIN_INSTALL_DIR}
+-    LIBRARY DESTINATION ${LIB_INSTALL_DIR}${LIB_SUFFIX}
+-    ARCHIVE DESTINATION ${LIB_INSTALL_DIR}${LIB_SUFFIX}
++    LIBRARY DESTINATION ${LIB_INSTALL_DIR}
++    ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
+ )
+ endif ( MACOSX_FRAMEWORK )
+ 

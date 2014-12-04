@@ -1,0 +1,12 @@
+diff -ru libmp4v2-1.5.0.1.orig/rtphint.cpp libmp4v2-1.5.0.1/rtphint.cpp
+--- libmp4v2-1.5.0.1.orig/rtphint.cpp	2009-03-01 17:39:24.000000000 +0000
++++ libmp4v2-1.5.0.1/rtphint.cpp	2009-03-01 17:39:58.000000000 +0000
+@@ -314,7 +314,7 @@
+ 	char **ppEncodingParams)
+ {
+   const char* pRtpMap;
+-  char* pSlash;
++  const char* pSlash;
+   u_int32_t length;
+ 	InitPayload();
+ 

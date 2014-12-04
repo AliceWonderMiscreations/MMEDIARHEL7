@@ -1,0 +1,12 @@
+diff -up wildmidi-0.2.3.4/src/wildmidi_lib.c~ wildmidi-0.2.3.4/src/wildmidi_lib.c
+--- wildmidi-0.2.3.4/src/wildmidi_lib.c~	2010-07-30 02:33:46.000000000 +0200
++++ wildmidi-0.2.3.4/src/wildmidi_lib.c	2010-09-12 13:35:58.693850011 +0200
+@@ -733,7 +733,7 @@ WM_LoadConfig (const char *config_file)
+ 								}
+ 							}
+ 				        }
+-						if (config_dir != NULL)
++						if (config_dir != NULL && line_tokens[1][0] != '/')
+ 						{
+ 							tmp_patch->filename = malloc(strlen(config_dir) + strlen(line_tokens[1]) + 1);
+ 							if (tmp_patch->filename == NULL)

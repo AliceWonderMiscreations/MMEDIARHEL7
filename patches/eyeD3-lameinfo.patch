@@ -1,0 +1,11 @@
+diff -ur eyeD3-0.7.4/src/eyed3/plugins/lameinfo.py eyeD3-0.7.4-patched/src/eyed3/plugins/lameinfo.py
+--- eyeD3-0.7.4/src/eyed3/plugins/lameinfo.py	2013-08-02 23:03:16.000000000 -0700
++++ eyeD3-0.7.4-patched/src/eyed3/plugins/lameinfo.py	2014-02-20 02:10:45.126582966 -0800
+@@ -19,6 +19,7 @@
+ ################################################################################
+ from __future__ import print_function
+ import os
++import math
+ from eyed3 import LOCAL_ENCODING as ENCODING
+ from eyed3.utils import formatSize, formatTime
+ from eyed3.utils.console import (printMsg, printError, printWarning, boldText,

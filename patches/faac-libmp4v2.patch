@@ -1,0 +1,29 @@
+diff -up faac-1.28/configure.in.mp4v2 faac-1.28/configure.in
+--- faac-1.28/configure.in.mp4v2	2009-02-05 01:55:38.000000000 +0100
++++ faac-1.28/configure.in	2009-03-12 01:42:20.000000000 +0100
+@@ -36,6 +36,8 @@ AC_CHECK_DECLS([MP4Create, MP4MetadataDe
+ 
+ if test x$external_mp4v2 = xyes; then
+   AC_MSG_NOTICE([*** Building with external mp4v2 ***])
++  MY_DEFINE(HAVE_LIBMP4V2)
++  LIBS="-lmp4v2 $LIBS"
+ else
+   if test x$WITHMP4V2 = xyes; then
+      AC_MSG_NOTICE([*** Building with internal mp4v2 ***])
+diff -up faac-1.28/configure.mp4v2 faac-1.28/configure
+--- faac-1.28/configure.mp4v2	2009-02-10 09:36:58.000000000 +0100
++++ faac-1.28/configure	2009-03-12 01:42:20.000000000 +0100
+@@ -19938,6 +19938,13 @@ fi
+ if test x$external_mp4v2 = xyes; then
+   { echo "$as_me:$LINENO: *** Building with external mp4v2 ***" >&5
+ echo "$as_me: *** Building with external mp4v2 ***" >&6;}
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_LIBMP4V2 1
++_ACEOF
++
++LIBS="-lmp4v2 $LIBS"
++
+ else
+   if test x$WITHMP4V2 = xyes; then
+      { echo "$as_me:$LINENO: *** Building with internal mp4v2 ***" >&5

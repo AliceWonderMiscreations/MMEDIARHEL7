@@ -1,0 +1,6 @@
+[awel-gst]
+name=AWEL GStreamer 1.4.x packages for RHEL/CentOS 7 - $basearch
+baseurl=http://awel.domblogger.net/7/gstreamer/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-AWEL7
