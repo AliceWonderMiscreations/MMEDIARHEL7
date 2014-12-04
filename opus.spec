@@ -70,7 +70,7 @@ rm -rf %{buildroot}
 %{_mandir}/man3/*.3*
 
 %changelog
-* Thu Sep 25 2014 Alice Wonder <alicewonder@shastaherps.org> 1.1-1.0
+* Thu Sep 25 2014 Alice Wonder <rpmbuild@domblogger.net> 1.1-1.0
 - BuildRequires doxygen for docs, package docs
 
 * Fri Dec  6 2013 Peter Robinson <pbrobinson@fedoraproject.org> 1.1-1

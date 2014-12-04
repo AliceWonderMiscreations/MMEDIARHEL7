@@ -2,7 +2,7 @@
 
 Summary:	Digital VCR and streaming server
 Name:		ffmpeg
-Version:	2.4.3
+Version:	2.4.4
 Release:	1%{?dist}
 %if 0%{?_with_amr:1}
 License:	GPLv3+
@@ -198,17 +198,20 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue Nov 04 2014 Alice Wonder <alicewonger@shastaherps.org> - 2.4.3-1
+* Thu Dec 04 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.4.4-1
+- Update to 2.4.4
+
+* Tue Nov 04 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.4.3-1
 - Update to 2.4.3
 
-* Wed Oct 08 2014 Alice Wonder <alicewonder@shastaherps.org> - 2.4.2-1
+* Wed Oct 08 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.4.2-1
 - Update to 2.4.2 release
 - rpmlint cleanup
 
-* Thu Sep 25 2014 Alice Wonder <alicewonder@shastaherps.org> - 2.4.1-0.test02
+* Thu Sep 25 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.4.1-0.test02
 - enable libopus
 
-* Mon Sep 22 2014 Alice Wonder <alicewonder@shastaherps.org> - 2.4.1-0.test01
+* Mon Sep 22 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.4.1-0.test01
 - MAJOR CHANGES
 - - Update to 2.4.1
 - - Removed many macros for arch other than x86 and x86_64
@@ -217,10 +220,10 @@ rm -rf $RPM_BUILD_ROOT
 - -  conditionals easier to read.
 - - Need to check dev BuildRequires
 
-* Sun Sep 21 2014 Alice Wonder <alicewonder@shastaherps.org> - 0.10.15-2
+* Sun Sep 21 2014 Alice Wonder <rpmbuild@domblogger.net> - 0.10.15-2
 - Rebuild with dirac,libvpx,crystalhd support enabled
 
-* Fri Sep 19 2014 Alice Wonder <alicewonder@shastaherps.org> - 0.10.15-1
+* Fri Sep 19 2014 Alice Wonder <rpmbuild@domblogger.net> - 0.10.15-1
 - Update to 0.10.15
 
 * Tue Mar 04 2014 Nicolas Chauvet <kwizart@gmail.com> - 0.10.11-1

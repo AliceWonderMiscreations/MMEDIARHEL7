@@ -48,8 +48,8 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/yum.repos.d/*
 
 %changelog
-* Sat Oct 18 2014 Alice Wonder <alicewonder@shastaherps.org> - 7-2
+* Sat Oct 18 2014 Alice Wonder <rpmbuild@domblogger.net> - 7-2
 - Don't make yum repo for debug packages
 
-* Fri Sep 26 2014 Alice Wonder <alicewonder@shastaherps.org> - 7-1
+* Fri Sep 26 2014 Alice Wonder <rpmbuild@domblogger.net> - 7-1
 - Initial release
