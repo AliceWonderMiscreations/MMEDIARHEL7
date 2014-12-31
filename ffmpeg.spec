@@ -2,7 +2,7 @@
 
 Summary:	Digital VCR and streaming server
 Name:		ffmpeg
-Version:	2.4.4
+Version:	2.4.5
 Release:	1%{?dist}
 %if 0%{?_with_amr:1}
 License:	GPLv3+
@@ -198,6 +198,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Dec 31 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.4.5-1
+- Update to 2.4.5
+
 * Thu Dec 04 2014 Alice Wonder <rpmbuild@domblogger.net> - 2.4.4-1
 - Update to 2.4.4
 
