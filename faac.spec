@@ -1,6 +1,6 @@
 Name:           faac
 Version:        1.28
-Release:        5%{?dist}.0
+Release:        6%{?dist}
 Summary:        Encoder and encoding library for MPEG2/4 AAC
 
 Group:          Applications/Multimedia
@@ -11,7 +11,7 @@ Patch0:         %{name}-libmp4v2.patch
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:  libmp4v2-devel
+BuildRequires:  libmp4v2-compat-devel
 
 
 %description
@@ -78,6 +78,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*.h
 
 %changelog
+* Thu Jan 29 2015 Alice Wonder <rpmbuild@domblogger.net> - 1.28-6
+- Rebuild against libmp4v2-compat
+
 * Tue Mar 12 2013 Nicolas Chauvet <kwizart@gmail.com> - 1.28-5
 - https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
@@ -117,10 +120,10 @@ rm -rf $RPM_BUILD_ROOT
 * Tue Jul 22 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 1.25-5
 - rebuild for RPM Fusion
 
-* Sat Sep 17 2007 Thorsten Leemhuis <fedora[AT]leemhuis.info> - 1.25-4
+* Sat Sep 15 2007 Thorsten Leemhuis <fedora[AT]leemhuis.info> - 1.25-4
 - update license tag
 
-* Sat Sep 17 2007 Thorsten Leemhuis <fedora[AT]leemhuis.info> - 1.25-3
+* Sat Sep 15 2007 Thorsten Leemhuis <fedora[AT]leemhuis.info> - 1.25-3
 - incorporate some minor adjustments from the freshrpms pacakge
 
 * Sun Dec 17 2006 Thorsten Leemhuis <fedora[AT]leemhuis.info> 1.25-2

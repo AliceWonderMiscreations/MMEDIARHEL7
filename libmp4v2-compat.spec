@@ -1,7 +1,9 @@
 Summary: Library for working with files using the mp4 container format
-Name: libmp4v2
+%define rname libmp4v2
+Name: %{rname}-compat
 Version: 1.5.0.1
-Release: 15%{?dist}
+Release: 16%{?dist}
+Requires: %{name}-libs = %{version}-%{release}
 License: MPLv1.1
 Group: System Environment/Libraries
 URL: http://resare.com/libmp4v2/
@@ -16,6 +18,12 @@ The libmp4v2 library provides an abstraction layer for working with files
 using the mp4 container format. This library is developed by mpeg4ip project
 and is an exact copy of the library distributed in the mpeg4ip package.
 
+%package libs
+Summary: Shared libraries for the mp4v2 library
+Group: System Environment/Libraries
+
+%description libs
+This package contains the shared libraries for libmp4v2.
 
 %package devel
 Summary: Development files for the mp4v2 library
@@ -28,7 +36,7 @@ using the libmp4v2 library.
 
 
 %prep
-%setup -q
+%setup -q -n %{rname}-%{version}
 %patch0 -p1 -b .consts
 
 
@@ -49,15 +57,19 @@ using the libmp4v2 library.
 %{__rm} -rf %{buildroot}
 
 
-%post -p /sbin/ldconfig
+%post libs -p /sbin/ldconfig
 
-%postun -p /sbin/ldconfig
+%postun libs -p /sbin/ldconfig
 
 
 %files
 %defattr(-,root,root,0755)
 %doc COPYING
 %{_bindir}/*
+
+%files libs
+%defattr(-,root,root,0755)
+%doc COPYING
 %{_libdir}/*.so.*
 
 %files devel
@@ -70,6 +82,9 @@ using the libmp4v2 library.
 
 
 %changelog
+* Thu Jan 29 2015 Alice Wonder <rpmbuild@domblogger.net> - 1.5.0.1-16
+- Rebuild as compat package
+
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.5.0.1-15
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
